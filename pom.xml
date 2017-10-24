@@ -10,6 +10,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>net.czternasty</groupId>
+      <artifactId>aspectroot</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
       <version>1.8.9</version>
@@ -21,6 +26,7 @@
       <version>1.8.9</version>
       <scope>compile</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -33,34 +39,22 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
         <version>1.8</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjtools</artifactId>
-            <version>1.8.9</version>
-          </dependency>
-        </dependencies>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <Xlint>ignore</Xlint>
-          <complianceLevel>${java.version}</complianceLevel>
-          <encoding>UTF-8</encoding>
-          <showWeaveInfo>false</showWeaveInfo>
-          <verbose>false</verbose>
-          <sources>
-            <source>
-              <basedir>${project.basedir}/src</basedir>
-              <includes>
-                <include>**/*.java</include>
-                <include>**/*.aj</include>
-              </includes>
-            </source>
-          </sources>
+          <aspectLibraries>
+            <!--<aspectLibrary>-->
+              <!--<groupId>net.parislabs</groupId>-->
+              <!--<artifactId>users</artifactId>-->
+            <!--</aspectLibrary>-->
+            <aspectLibrary>
+              <groupId>net.czternasty</groupId>
+              <artifactId>aspectroot</artifactId>
+            </aspectLibrary>
+          </aspectLibraries>
         </configuration>
         <executions>
           <execution>
@@ -81,7 +75,6 @@
       </plugin>
     </plugins>
   </build>
-
 
 
 </project>

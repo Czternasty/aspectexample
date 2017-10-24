@@ -2,7 +2,13 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="AspectJ" name="AspectJ">
-      <configuration />
+      <configuration>
+        <option name="aspectPath">
+          <projectLibrary>
+            <option name="name" value="Maven: net.czternasty:aspectroot:1.0-SNAPSHOT" />
+          </projectLibrary>
+        </option>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -16,6 +22,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: net.czternasty:aspectroot:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.9" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjtools:1.8.9" level="project" />
   </component>
