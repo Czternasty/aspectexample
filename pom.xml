@@ -44,12 +44,32 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
         <version>1.8</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>1.8.9</version>
+          </dependency>
+        </dependencies>
         <configuration>
-          <aspectLibraries>
-            <!--<aspectLibrary>-->
-              <!--<groupId>net.parislabs</groupId>-->
-              <!--<artifactId>users</artifactId>-->
-            <!--</aspectLibrary>-->
+          <complianceLevel>1.8</complianceLevel>
+          <source>1.8</source>
+          <target>1.8</target>
+          <Xlint>ignore</Xlint>
+          <complianceLevel>${java.version}</complianceLevel>
+          <encoding>UTF-8</encoding>
+          <showWeaveInfo>false</showWeaveInfo>
+          <verbose>false</verbose>
+          <sources>
+            <source>
+              <basedir>${project.basedir}/src</basedir>
+              <includes>
+                <include>**/*.java</include>
+                <include>**/*.aj</include>
+              </includes>
+            </source>
+          </sources>
+	        <aspectLibraries>
             <aspectLibrary>
               <groupId>net.czternasty</groupId>
               <artifactId>aspectroot</artifactId>
